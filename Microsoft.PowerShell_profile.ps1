@@ -45,7 +45,8 @@ Set-Alias gitpp GitPullPush
 
 function GitPfusch ($Message)
 {
-	git commit -am  "{0}; (fast commit)" -f $MESSAGE 
+	$appendText = "; (fast commit)"
+	git commit -am "$Message $appendText"
 	git pull
     git push
 }
